@@ -1,0 +1,32 @@
+create package.json - npm init -y
+install nodemon - npm install nodemon --save-dev
+create the js file you want: touch server.js
+add to package.json the "start" under "scripts": 
+"scripts": {
+    ...
+    "start": "nodemon server.js"
+  }
+now the nodemon will refresh the server after updates
+
+install express: npm install express
+
+install body parser for incoming requests: npm install body-parser
+
+install bcrypt to hash passwords: npm install bcrypt-nodejs
+
+connect to postgresql: npm install knex
+                        npm install pg
+
+postgresql: 
+    CREATE TABLE table_name (column_1 datatype, column_2 datatype);
+    CREATE TABLE users (id serial PRIMARY KEY,
+                        name VARCHAR(100),
+                        email text UNIQUE NOT NULL,
+                        entries BIGINT DEFAULT 0,
+                        joined TIMESTAMP NOT NULL);
+
+    CREATE TABLE login (id serial PRIMARY KEY,
+                        hash VARCHAR(100) NOT NULL,
+                        email text UNIQUE NOT NULL);
+
+    INSERT INTO users VALUES ('omer', 'omer@gmail.com', '1994-11-27');
